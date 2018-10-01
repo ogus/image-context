@@ -1,0 +1,17 @@
+{
+  "name": "image-manager",
+  "version": "1.0.0",
+  "description": "A small tool to manage image load and storage",
+  "scripts": {
+    "build": "terser image-manager.js -c -m reserved=['ImgManager'] > image-manager.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ogus/"
+  },
+  "author": "Ogus",
+  "license": "ISC",
+  "devDependencies": {
+    "terser": "^3.9.2"
+  }
+}
