@@ -1,17 +1,25 @@
 {
-  "name": "image-manager",
-  "version": "1.0.0",
-  "description": "A small tool to manage image load and storage with Javascript",
-  "scripts": {
-    "build": "terser image-manager.js -c -m reserved=['ImgManager'] > image-manager.min.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ogus/image-manager.git"
-  },
+  "name": "image-context",
+  "version": "1.1.0",
+  "description": "A small tool to load and store images, with Javascript",
   "author": "Ogus",
-  "license": "ISC",
+  "license": "WTFPL",
+  "main": "src/image-context.js",
+  "scripts": {
+    "build": "terser src/image-context.js -c -m reserved=['ImageContext'] > src/image-context.min.js"
+  },
   "devDependencies": {
     "terser": "^3.9.2"
-  }
+  },
+  "keywords": [
+    "image",
+    "image-loader",
+    "asynchronous",
+    "resource"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ogus/image-context.git"
+  },
+  "homepage": "https://github.com/ogus/image-context#readme"
 }
