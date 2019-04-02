@@ -1,26 +1,28 @@
 {
-  "name": "image-loader",
+  "name": "img-container",
   "version": "1.1.0",
-  "description": "A small and simple tool to dynamically load and store images",
+  "description": "A small and simple tool to dynamically load and store images in a single data container",
   "author": "Ogus",
   "license": "WTFPL",
-  "main": "src/image-loader.js",
+  "main": "src/img-container.js",
   "scripts": {
-    "build": "uglifyjs src/image-loader.js -c -m reserved=['ImageLoader'] -o src/image-loader.min.js"
+    "build": "uglifyjs src/img-container.js -c -m reserved=['ImgContainer'] -o src/img-container.min.js"
   },
   "devDependencies": {
     "uglify-js": "^3.4.9"
   },
   "keywords": [
-    "image-loader",
+    "img-container",
     "image",
     "loader",
+    "container",
+    "asset",
     "asynchronous",
-    "resource"
+    "tiny"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ogus/image-loader.git"
+    "url": "https://github.com/ogus/img-container.git"
   },
-  "homepage": "https://github.com/ogus/image-loader#readme"
+  "homepage": "https://github.com/ogus/img-container#readme"
 }

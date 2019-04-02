@@ -1,29 +1,29 @@
-# Image Loader
+# Image Container
 
-A small and simple tool to dynamically load and store images in a single JS context
+A small and simple tool to dynamically load and store images in a single data container
 
 
 ## Usage
 
 ```js
-var ImageLoader = require('image-loader');
+var ImgContainer = require('img-container');
 
 // Set the main directory of all image files
-ImageLoader.setDirectory("path/to/images/");
+ImgContainer.setDirectory("path/to/images/");
 
 // Load 1 image
-ImageLoader.load("first.png");
+ImgContainer.load("first.png");
 // Load 2 images
-ImageLoader.load(["folder/second.png", "https://www.w3schools.com/w3css/img_lights.jpg"]);
+ImgContainer.load(["folder/second.png", "https://www.w3schools.com/w3css/img_lights.jpg"]);
 // Load an image and give it an ID
-ImageLoader.load({"folder/hidden/foobar.png": "hidden_foobar"});
+ImgContainer.load({"folder/hidden/foobar.png": "hidden_foobar"});
 
 // Access loaded images
-ImageLoader.onload(function () {
+ImgContainer.onload(function () {
   // Get an image with its name as an ID
-  var second = ImageLoader.get("img_lights.jpg");
+  var second = ImgContainer.get("img_lights.jpg");
   // Or use a custom ID previously set
-  var img_foobar = ImageLoader.get("hidden_foobar");
+  var img_foobar = ImgContainer.get("hidden_foobar");
 });
 
 ```
@@ -31,7 +31,7 @@ ImageLoader.onload(function () {
 
 ## API
 
-The module provides a single *static* class `ImageLoader`, with a set of *static* methods.
+The module provides a single *static* class `ImgContainer`, with a set of *static* methods.
 
 ### `setDirectory(directory)`
 
@@ -46,7 +46,7 @@ Load one or more images asynchronously, and store them in the object context for
 Return an object with a unique `then(func)` method, that accepts a callback function. This allows you to chain the `load` method with another method that will be called after all images are loaded.
 
 ```js
-ImageLoader.load(["img1.png", "img2.png"]).then(function () {
+ImgContainer.load(["img1.png", "img2.png"]).then(function () {
   // do something
 });
 ```
@@ -89,7 +89,7 @@ Setting the ID of an image is useful to query the image later without having to 
 
 To define a custom ID, you need to use an `Object` structure:
 ```js
-ImageLoader.load({"path/to/image.jpeg", "myCustomId"});
+ImgContainer.load({"path/to/image.jpeg", "myCustomId"});
 ```
 
 The object must have a unique key with a unique value, both being `String` elements. The *key* is used as the path to the image, and the *value* is the identifier.
@@ -100,7 +100,7 @@ The object must have a unique key with a unique value, both being `String` eleme
 
 Load 3 images, with the last one having a custom ID
 ```js
-ImageLoader.load([
+ImgContainer.load([
   "img1.png",
   "img2.png",
   {"img3.png": "foo"}
@@ -109,7 +109,7 @@ ImageLoader.load([
 
 Load 5 images in 3 different folders
 ```js
-ImageLoader.load({
+ImgContainer.load({
   "folder1/": ["img1.png", "img2.png"],
   "folder2/": {
     "subfolder1/": "img3.png",
@@ -120,7 +120,7 @@ ImageLoader.load({
 
 Load 4 images in a local folder and 3 from a url, with an `Object` structure
 ```js
-ImageLoader.load({
+ImgContainer.load({
   "../asset/": {
     "vfx/": [
       "fx1.png",
@@ -139,7 +139,7 @@ ImageLoader.load({
 
 Same example as before, with more `Array` structures
 ```js
-ImageLoader.load([
+ImgContainer.load([
   {
     "../asset/vfx/": [
       "fx1.png",
