@@ -161,17 +161,17 @@ ImgContainer.load([
 
 You can install the module with [npm](https://www.npmjs.com/)
 ```sh
-npm install image-loader
+npm install img-container
 ```
 
 You can import the module with a CDN like [unpkg](https://unpkg.com/)
 ```html
-<script type="text/javascript" src="https://unpkg.com/image-loader@latest"></script>
+<script type="text/javascript" src="https://unpkg.com/img-container@latest"></script>
 ```
 
-You can clone the repository & include the `image-loader.js` file in your project:
+You can clone the repository & include the `img-container.js` file in your project:
 ```sh
-git clone https://github.com/ogus/image-loader.git
+git clone https://github.com/ogus/img-container.git
 ```
 
 
